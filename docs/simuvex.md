@@ -11,8 +11,8 @@ Given a machine state and a VEX IR block, SimuVEX provides a resulting machine s
 SimuVEX's ultimate goal is to provide a semantic meaning to blocks of binary code. Let's grab a motivating example, from the angr testcases.
 
 This is the function that we'll be looking at:
-
-	# cat fauxware.c | tail -n+9 | head -n 17
+```c
+	// cat fauxware.c | tail -n+9 | head -n 17
 	int authenticate(char *username, char *password)
 	{
 		char stored_pw[9];
@@ -29,7 +29,7 @@ This is the function that we'll be looking at:
 		return 0;
 	
 	}
-
+```
 Here is the native AMD64 code:
 
 	# objdump -d /home/angr/angr/tests/blob/x86_64/fauxware
